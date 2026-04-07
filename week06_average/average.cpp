@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 
+//리턴 값: false 오류, true 정상
 bool average(int a[], int size, int& avg) {
     if (size <= 0) return false;
 
