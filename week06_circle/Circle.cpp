@@ -6,6 +6,7 @@ class Circle {
 public:
 	Circle();
 	Circle(int radius);
+	~Circle();
 	double getArea();
 	int getRadius();
 	void setRadius(int radius);
@@ -21,8 +22,8 @@ Circle::Circle(int radius) {
 	cout << "생성자 실행 " << radius << endl;
 }
 
-Circle::Circle() {
-	cout << "생성자 소멸" << radius << endl;
+Circle::~Circle() {
+	cout << "소멸자 실행" << radius << endl;
 }
 
 double Circle::getArea() {
