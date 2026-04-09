@@ -55,4 +55,5 @@ int main() {
 		}
 		printBoard(&xpos, &ypos);
 	}
+	return 0;
 }
