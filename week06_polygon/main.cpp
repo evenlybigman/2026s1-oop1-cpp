@@ -1,6 +1,6 @@
 ﻿#include <iostream> //입출력 라이브러리 가져오기
 #include "Polygon.h" //폴리곤 헤더파일 가져오기
-using namespace std; //std 이름공간 생략
+using namespace std; //std 이름공간 지칭 생략
 
 int main() {
 	Polygon poly(6); //점이 6개인 다각형 poly 생성
