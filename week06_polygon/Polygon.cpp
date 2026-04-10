@@ -20,11 +20,12 @@ void Polygon::read() {
 	}
 }
 
-bool Polygon::get(int n, int& x, int& y) { //n번째 점의 x값과 y값을 반환
-	x = xlist[n - 1];
-	y = ylist[n - 1];
+bool Polygon::get(int n, int& x, int& y) {
 	if (n <= 0 || n > size)
 		return false;
-	else
+	else {
+		x = xlist[n - 1];
+		y = ylist[n - 1];
 		return true;
+	}
 }
