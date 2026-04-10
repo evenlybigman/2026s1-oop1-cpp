@@ -25,6 +25,6 @@ void Fitness::count(string gender, int& count) { //해당하는 성별의 변수
 int& Fitness::at(string gender) { //성별을 받아 그 성별의 명수를 읽거나 쓸 수 있는 함수 구현
 	if (gender == man) //성별이 남이라면 
 		return countMan; //현재 남자의 명수를 반환한다. 
-	else if (gender == woman) //성별이 여자라면
+	else //남자가 아니라면
 		return countWoman; //현재 여자의 명수를 반환한다.
 }
