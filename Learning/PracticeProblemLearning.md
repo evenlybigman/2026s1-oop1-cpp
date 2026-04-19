@@ -29,5 +29,19 @@ void Container::rotate() {
 }
 ```
 
+### 4-11
 
+가장 비싼 객체를 리턴 하는 알고리즘
+
+``` c++
+Book* Library::mostExpensive() {
+	int mostidx = 0;
+	for (int i = 0; i < next; i++) {
+		if (p[i].getPrice() > p[mostidx].getPrice()) {
+			mostidx = i;
+		}
+	}
+	return &p[mostidx];
+}
+```
 
