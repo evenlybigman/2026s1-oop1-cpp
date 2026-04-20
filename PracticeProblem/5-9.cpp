@@ -13,7 +13,7 @@ public:
 MyStack::MyStack() {};
 
 bool MyStack::push(int n) {
-	if (this->tos == 10) {
+	if (this->tos >= 10) {
 		return false;
 	}
 	else{
@@ -23,7 +23,7 @@ bool MyStack::push(int n) {
 }
 
 bool MyStack::pop(int& n) {
-	if (tos == 0) {
+	if (tos <= 0) {
 		return false;
 	}
 	else {
