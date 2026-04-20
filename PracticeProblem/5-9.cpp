@@ -2,16 +2,32 @@
 using namespace std;
 
 class MyStack {
-	int p[10];
-	int tos;
+	int* p = NULL;
+	int size = 0;
+	int tos = 0;
 public:
-	MyStack();
+	MyStack(int size);
+	MyStack(const MyStack& src);
+	~MyStack();
 	bool push(int n);
 	bool pop(int& n);
 };
 
-MyStack::MyStack() {
-	tos = 0;
+MyStack::MyStack(int size = 10) {
+	this->size = size;
+	p = new int[size];
+}
+
+MyStack::MyStack(const MyStack& src) {
+	this->size = src.size;
+	p = new int[src.size];
+	for (int i = 0; i < size; i++) {
+		p[i] = src.p[i];
+	}
+}
+
+MyStack::~MyStack() {
+	delete[] p;
 }
 
 bool MyStack::push(int n) {
@@ -31,14 +47,15 @@ bool MyStack::pop(int& n) {
 }
 
 int main() {
-	MyStack st;
-	for (int i = 0; i < 11; i++) {
-		if (st.push(i)) cout << i << ' ';
-		else cout << endl << i + 1 << "번째 푸시 실패! 스택 차 있음" << endl;
-	}
+	MyStack a(10);
+	a.push(10); a.push(20);
+
+	MyStack b = a;
+	b.push(30);
+
 	int n;
-	for (int i = 0; i < 11; i++) {
-		if (st.pop(n)) cout << n << ' ';
-		else cout << endl << i + 1 << "번째 팝 실패! 스택이 비어 있음" << endl;
-	}
+	a.pop(n);
+	cout << "스택 a에서 팝한 값 " << n << endl;
+	b.pop(n);
+	cout << "스택 b에서 팝한 값 " << n << endl;
 }

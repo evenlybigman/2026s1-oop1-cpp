@@ -84,32 +84,29 @@ using namespace std;
 
 class MyStack {
 	int p[10];
-	int tos = 0;
+	int tos;
 public:
 	MyStack();
 	bool push(int n);
 	bool pop(int& n);
 };
 
-MyStack::MyStack() {};
+MyStack::MyStack() {
+	tos = 0;
+}
 
 bool MyStack::push(int n) {
-	if (this->tos >= 10) {
-		return false;
-	}
-	else{
-		p[this->tos++] = n;
+	if (tos >= 10) return false;
+	else {
+		p[tos++] = n;
 		return true;
 	}
 }
 
 bool MyStack::pop(int& n) {
-	if (tos <= 0) {
-		return false;
-	}
+	if (tos <= 0) return false;
 	else {
-		tos--;
-		n = this->p[tos];
+		n = p[--tos];
 		return true;
 	}
 }
@@ -133,3 +130,6 @@ int main() {
 첫 시도 컴파일에러
 
 push와 pop 구현 다시 연습 해볼 것
+
+2회차 컴파일 에러 1회 이후 성공
+
