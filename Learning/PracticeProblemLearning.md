@@ -133,3 +133,31 @@ push와 pop 구현 다시 연습 해볼 것
 
 2회차 컴파일 에러 1회 이후 성공
 
+# Chap 6
+
+### 6-3-2
+
+``` c++
+#include <iostream>
+using namespace std;
+
+bool equals(string x, string y, int size = 0, string z = "") {
+	if (size == 0) return x == y;
+	if (x.substr(0, size) == y.substr(0, size)) return 1;
+	else return 0;
+}
+
+int main() {
+	string x = "Prof. Hwang";
+	string y = "Prof. Kim";
+	string z = "Prof. Lee";
+	if (equals(x, y)) cout << "같음" << endl;
+	if (equals(x, y, 3)) cout << "앞 3글자 같음" << endl;
+	if (equals(x, y, 5, z)) cout << "앞 5글자 같음" << endl;
+}
+```
+
+string s; 일때 s.substr(0,3);를 사용하면 문자열 s의 처음 3글자를 새로운 string 객체로 만들어 리턴한다.
+
+
+
