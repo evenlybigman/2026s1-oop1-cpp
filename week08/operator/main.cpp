@@ -16,6 +16,8 @@ public:
 	Power& operator = (int op2);
 	friend Power operator + (int op1, Power op2);
 	friend Power operator + (Power op1, Power op2);
+	Power& operator << (int op2);
+	Power& operator << (Power op2);
 	bool operator ! ();
 	void show();
 };
@@ -75,6 +77,18 @@ Power operator + (Power a, Power b) {
 	return tmp;
 }
 
+Power& Power::operator << (int op2) {
+	punch += op2;
+	kick += op2;
+	return *this;
+}
+
+Power& Power::operator << (Power op2) {
+	punch += op2.punch;
+	kick += op2.kick;
+	return *this;
+}
+
 int main() {
 	int n = 2 + 3;
 	Power a(2, 3), b(20, 30), c;
@@ -121,4 +135,9 @@ int main() {
 	c = 2 + a; // 2.+(a), +(2,a)
 	a.show();
 	c.show();
+
+	a.show();
+	c.show();
+	a << 3 << c << 5; // a.<<(3).<<(4).<<(5), <<(a,3)<<(a,4)<<(a,5)
+	a.show();
 }
