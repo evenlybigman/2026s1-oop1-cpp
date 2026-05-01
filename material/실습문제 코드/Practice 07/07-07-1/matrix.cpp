@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 class Matrix {
@@ -50,5 +50,5 @@ int main() {
 	a += b;
 	a.show(); b.show(); c.show();
 	if(a == c) 
-		cout << "a ¿Í c´Â °°½À´Ï´Ù." << endl;
+		cout << "a ï¿½ï¿½ cï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½." << endl;
 }
