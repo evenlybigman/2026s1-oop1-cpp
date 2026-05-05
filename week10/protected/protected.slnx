@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="ColorPoint.vcxproj" Id="a0569a30-6d3d-4c11-8d09-fb4f0e0300ce" />
+  <Project Path="protected.vcxproj" Id="859d38b9-7ccb-45c0-aa05-34987ccfeaf6" />
 </Solution>
