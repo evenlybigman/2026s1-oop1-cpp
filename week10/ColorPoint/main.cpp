@@ -1,0 +1,46 @@
+﻿#include <iostream>
+using namespace std;
+
+class Point {
+	int x, y; //점의 좌표
+public:
+	void set(int x, int y) { this->x = x; this->y = y; }
+	void showPoint() { cout << "(" << x << "," << y << ")" << endl; }
+};
+
+class ColorPoint : public Point { // Point 클래스 상속. 파생 클래스
+	string color;
+public:
+	void setColor(string color) { this->color = color; }
+	void showColorPoint();
+};
+
+void ColorPoint::showColorPoint() {
+	showPoint();
+	cout << color << endl;
+}
+
+int main() {
+	Point p;
+	p.set(3, 4); p.showPoint();
+
+	ColorPoint cp;
+	cp.set(4, 5);
+	cp.setColor("red");
+	cp.showColorPoint();
+
+	ColorPoint* a = &cp;
+	Point* b = &cp; // 업캐스팅이 일어나고 있다.
+	a->set(3, 4);
+	a->showPoint();
+	a->setColor("red");
+	a->showColorPoint();
+	b->set(5, 6);
+	b->showPoint();
+
+	ColorPoint* q = (ColorPoint*)b; // 다운캐스팅 성공한 경우
+	q->showColorPoint();
+
+	q = (ColorPoint*)&p; // 다운캐스팅 실패한 경우
+	q->showColorPoint();
+}
