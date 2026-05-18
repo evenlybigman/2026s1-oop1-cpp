@@ -3,5 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="9-4.vcxproj" />
+  <Project Path="7 - 6/7 - 6.vcxproj" />
+  <Project Path="9 - 4/9 - 4.vcxproj" />
 </Solution>

@@ -3,7 +3,7 @@
 #include "abstractpoint.h" // abstractpoint.h 헤더파일 가져오기
 #include "platinum.h" // platinum.h 헤더파일 가져오기
 
-int main() { 
+int main() {
 	Platinum hwang("황기태", 5, 100000, 7), park("박채원", 5, 100000, 7);
 	// 생성자 의미 : 100,000원까지는 5%, 그 보다 큰 경우 7%
 

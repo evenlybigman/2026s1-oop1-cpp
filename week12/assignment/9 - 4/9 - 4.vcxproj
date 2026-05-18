@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{582db9aa-9660-42cb-9e1e-e10e72379319}</ProjectGuid>
+    <ProjectGuid>{3ff7c950-f681-4cc1-b322-03e80fd31c74}</ProjectGuid>
     <RootNamespace>My94</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

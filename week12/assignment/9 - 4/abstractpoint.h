@@ -8,7 +8,7 @@ class AbstractPoint { // AbstractPoint 클래스 선언부
 protected: // 상속 관계에서 접근 가능한 멤버 선언
 	string name;  // 이름값 저장하는 변수
 	int point = 0; // 포인트 값을 저장하는 변수
-	int ratio; // 적립률을 지정하는 변수 (%)
+	int ratio; // 포인트 적립률을 지정하는 변수 (%)
 public: // 클래스 외부에서 접근 가능한 멤버 선언
 	AbstractPoint(string name, int ratio = 1); // 이름과 적립률을 받는 생성자 함수
 	virtual void earn(int pay) = 0; // 가상 함수
