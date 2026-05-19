@@ -1,4 +1,4 @@
-﻿#ifndef ABSTRACTPOINT_H // 중복 방지 선언
+﻿#ifndef ABSTRACTPOINT_H // ABSTRACTPOINT_H가 정의된적 없다면 포함
 #define ABSTRACTPOINT_H // ABSTRACTPOINT_H 정의 시작
 
 #include <string> // 스트링 클래스 가져오기

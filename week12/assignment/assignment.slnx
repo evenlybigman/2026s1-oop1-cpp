@@ -3,6 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="7 - 6/7 - 6.vcxproj" />
-  <Project Path="9 - 4/9 - 4.vcxproj" />
+  <Project Path="7 - 6/7 - 6.vcxproj" Id="c39521f2-49b4-4e8b-99b9-279e5221e24f" />
+  <Project Path="9 - 4/9 - 4.vcxproj" Id="3ff7c950-f681-4cc1-b322-03e80fd31c74" />
 </Solution>

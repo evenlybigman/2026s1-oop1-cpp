@@ -13,7 +13,7 @@ Light& Light::operator += (const int op2) { // 정수값 op2를 매개변수로 
 	return *this; // 자기자신 리턴
 }
 
-void Light::operator ~ () { // 자신의 빛의 크기를 출력하는 ~ 연산자 오버로딩
+void Light::operator ~ () const { // 자신의 빛의 크기를 출력하는 ~ 연산자 오버로딩
 	cout << "빛 크기 " << brightness << endl; // 자신의 빛의 크기 출력
 }
 
@@ -28,7 +28,7 @@ Light Light::operator -- (int x) { // 자신의 값을 1 낮추고 낮추기 전
 	return tmp; // 복사본 리턴
 }
 
-bool Light::operator == (const Light& op2) const { // 자신과 Light 객체 op2의 빛의 크기를 비교하는 == 연산자 오버로딩
-	if (brightness == op2.brightness) return true; // 빛의 크기가 같으면 true 리턴
+bool Light::operator == (const int op2) const { // 자신과 Light 객체 op2의 빛의 크기를 비교하는 == 연산자 오버로딩
+	if (brightness == op2) return true; // 빛의 크기가 같으면 true 리턴
 	else return false; // 빛의 크기가 서로 다르면 false 리턴
 }
