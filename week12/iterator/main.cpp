@@ -31,7 +31,6 @@ int main() {
 		v.push_back(n);
 	}
 
-
 	print(v);
 	cout << "가장 큰 값: " << biggest(v) << endl;
 }
