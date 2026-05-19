@@ -9,6 +9,8 @@ int main() {
 	dic["apple"] = "사과";
 	dic["cherry"] = "체리";
 	
+	dic.erase("apple");
+
 	cout << "저장된 단어의 개수: " << dic.size() << endl;
 	while (true) {
 		string eng;
