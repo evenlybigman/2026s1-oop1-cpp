@@ -24,9 +24,18 @@ istream& operator >>(istream& op1, Point& op2) {
 	return op1;
 }
 
-int main() {
-	Point a(2, 3), b(3, 4);
-	cout << a << b;
+void show(string x) {
+	cout << "hello" << endl;
+}
 
-	cin >> a;
+void print(string x) {
+	cout << "hello2" << endl;
+}
+
+int main() {
+	int n;
+	void (*f)(string); //선언문
+	
+	f = show;
+	f("Hello");
 }
