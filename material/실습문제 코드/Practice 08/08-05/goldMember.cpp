@@ -1,24 +1,24 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 class Member {
 protected:
-	string name; // È¸¿ø ¸í
-	int point = 0; // ÃÊ±â Æ÷ÀÎÆ® 0
-	int ratio; // Æ÷ÀÎÆ® Àû¸³·ü. ´ÜÀ§: %
+	string name; // È¸ï¿½ï¿½ ï¿½ï¿½
+	int point = 0; // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® 0
+	int ratio; // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½: %
 public:
 	Member(string name, int ratio = 1);
-	void earn(int pay); // pay ±Ý¾×À» »ç¿ëÇÑ °æ¿ì Æ÷ÀÎÆ® Àû¸³
-	int getPoint(); // ÇöÀç Æ÷ÀÎÆ® ¸®ÅÏ
-	void show(); // ÀÌ¸§°ú Æ÷ÀÎÆ® Ãâ·Â
+	void earn(int pay); // pay ï¿½Ý¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+	int getPoint(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+	void show(); // ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
 };
 
 Member::Member(string name, int ratio) {
 	this->name = name; this->ratio = ratio;
 }
 
-void Member::earn(int pay) { // pay ¸¸Å­ ÁöÃâÇÑ °æ¿ì Æ÷ÀÎÆ® Àû¸³
-	point += pay * ratio / 100; // ratio ºñÀ²·Î Æ÷ÀÎÆ® Àû¸³
+void Member::earn(int pay) { // pay ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+	point += pay * ratio / 100; // ratio ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 }
 
 int Member::getPoint() {
@@ -26,33 +26,33 @@ int Member::getPoint() {
 }
 
 void Member::show() { 
-	cout << name << "ÀÇ Æ÷ÀÎÆ® " << point << endl; 
+	cout << name << "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® " << point << endl; 
 }
 
 class GoldMember : public Member {
 public:
 	GoldMember(string name) : Member(name, 3) {}
-	void earn(int pay) { // pay ¸¸Å­ ÁöÃâÇÑ °æ¿ì Æ÷ÀÎÆ® Àû¸³
+	void earn(int pay) { // pay ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 		int goldRatio = 0;
 		if(pay < 100000) goldRatio = ratio;
-		if(pay >= 100000 && pay < 200000) goldRatio = 4; // goldRatio´Â 4
-		else if(pay >= 200000) goldRatio = 5; // goldRatio´Â 5
-		point += pay * goldRatio / 100; // ratio ºñÀ²·Î Æ÷ÀÎÆ® Àû¸³
+		if(pay >= 100000 && pay < 200000) goldRatio = 4; // goldRatioï¿½ï¿½ 4
+		else if(pay >= 200000) goldRatio = 5; // goldRatioï¿½ï¿½ 5
+		point += pay * goldRatio / 100; // ratio ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 	}
 };
 
 
 int main() {
-	Member a("È²±âÅÂ");
-	GoldMember b("ÀÌÀç¹®"); 
+	Member a("È²ï¿½ï¿½ï¿½ï¿½");
+	GoldMember b("ï¿½ï¿½ï¿½ç¹®"); 
 	
 	for (int i = 0; i < 5; i++) {
-		cout << (i + 1) << " ÀÌ¸§°ú ÁöÃâ¾×>>";
+		cout << (i + 1) << " ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½>>";
 		string name; int pay;
 		cin >> name >> pay;
-		if (name == "È²±âÅÂ") a.earn(pay);
-		else if (name == "ÀÌÀç¹®") b.earn(pay);
-		else i--; // ¾ø´Â È¸¿øÀÌ¹Ç·Î ´Ù½Ã ÀÔ·Â
+		if (name == "È²ï¿½ï¿½ï¿½ï¿½") a.earn(pay);
+		else if (name == "ï¿½ï¿½ï¿½ç¹®") b.earn(pay);
+		else i--; // ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½Ì¹Ç·ï¿½ ï¿½Ù½ï¿½ ï¿½Ô·ï¿½
 	}
 	a.show(); b.show();
 }
