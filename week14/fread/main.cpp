@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <string>
 #include <fstream>
 using namespace std;
 
@@ -11,13 +12,26 @@ int main() {
 		exit(1);
 	}
 
+
+	//파일을 읽는 3가지 방법
+	 
 	int ch;
 	int count = 0;
 	while ((ch = fin.get()) != EOF) {
 		cout.put(ch);
 		count++;
 	}
+	
+	char buf[100];
+	while (fin.getline(buf, 100)) {
+		cout << buf << endl;
+	}
+
+	string buf;
+	while (getline(fin, buf)) {
+		cout << buf << endl; 
+	}
+
 	cout << endl;
-	cout << "파일은 " << count << "바이트 입니다." << endl;
 	fin.close();
 }
