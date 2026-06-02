@@ -2,16 +2,17 @@
 #include <fstream>
 using namespace std;
 
-int main() {
-	//이름 학번 학과 받아서 파일에 저장
-	char name[100], dept[100];
-	int id;
+void write() {
+	ofstream fout;
+	fout.open("c:\\temp\\student.txt", ios::out | ios::app); // ofstream 객체 생성 ....student.txt 파일 열기
 
-	ofstream fout("c:\\temp\\student.txt"); // ofstream 객체 생성 ....student.txt 파일 열기
 	if (!fout) {
 		cout << "열기 실패" << endl;
-		return 0;
+		exit(1);
 	}
+
+	char name[100], dept[100];
+	int id;
 
 	cout << "이름>>";
 	cin >> name;
@@ -20,9 +21,32 @@ int main() {
 	cout << "학과>>";
 	cin >> dept;
 
-	fout << "이름: " << name << endl;
-	fout << "학번: " << id << endl;
-	fout << "학과: " << dept << endl;
+	fout << name << endl;
+	fout << id << endl;
+	fout << dept << endl;
 
 	fout.close();
+}
+
+void read() {
+	ifstream fin;
+	fin.open("c:\\temp\\student.txt");
+
+	if (!fin) {
+		cout << "열기 실패" << endl;
+		exit(1);
+	}
+
+	char name[100], dept[100];
+	int id;
+
+	name[0] = '\0';
+	dept[0] = '\0';
+	id = 0;
+	fin >> name >> dept >> id;
+
+}
+
+int main() {
+	write();
 }
