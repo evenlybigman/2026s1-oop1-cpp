@@ -54,6 +54,5 @@ int main() {
 		string word;
 		cin >> word;
 		search(wordVec, word);
-		
 	}
 }
