@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ofstream.vcxproj" Id="ea3d2dc6-5c4f-4c32-a68c-bf14ae5c9dc2" />
+</Solution>
