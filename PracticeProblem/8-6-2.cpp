@@ -4,45 +4,39 @@ using namespace std;
 class Schedule {
 protected:
 	int count;
-	int* jobs = NULL;
+	int* jobs;
 	int curLoc;
-	int distance = 0;
 public:
 	Schedule(int curloc, int n[], int count);
 	~Schedule();
 	int run();
-	int getDistance() { return distance; }
 	int getJobs() { return count; }
 	int getCurLoc() { return curLoc; }
 };
 
 Schedule::Schedule(int curloc, int n[], int count) {
 	this->curLoc = curloc;
-	this->jobs = new int[count];
+	this->jobs = n;
 	this->count = count;
-
-	for (int i = 0; i < count; i++) {
-		jobs[i] = n[i];
-	}
-}
-
-int Schedule::run() {
-	cout << "현재 위치는 " << curLoc << "동: 배달 시작 ..." << curLoc;
+	cout << "현재 위치는 " << curloc << "동: 배달 시작 ..." << curloc;
 	for (int i = 0; i < count; i++) {
 		cout << " -> " << jobs[i];
 	}
 	cout << endl;
+}
 
+int Schedule::run() {
+	int sum = 0;
 	for (int i = 0; i < count; i++) {
-		if (curLoc > jobs[i]) distance += curLoc - jobs[i];
-		else distance += jobs[i] - curLoc;
+		if (curLoc > jobs[i]) sum += curLoc - jobs[i];
+		else sum += jobs[i] - curLoc;
 		curLoc = jobs[i];
 	}
-	return distance;
+	return sum;
 }
 
 Schedule::~Schedule() {
-	delete[] jobs;
+
 }
 
 int main() {
@@ -50,9 +44,7 @@ int main() {
 	cout << "택배를 픽업할 동을 요청 순서대로 6개 입력>>";
 	for (int i = 0; i < 6; i++)
 		cin >> jobs[i];
-	
 	Schedule fcfs(10, jobs, 6);
-	fcfs.run();
-	cout << "전체 움직인 거리는 " << fcfs.getDistance() << ", ";
+	cout << "전체 움직인 거리는 " << fcfs.run() << ", ";
 	cout << "현재 위치는 " << fcfs.getCurLoc() << "동" << endl;
 }
